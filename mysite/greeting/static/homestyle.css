@@ -1,0 +1,51 @@
+#head1 {
+    font-family: monospace;
+    color: royalblue;
+}
+
+#btn1 {
+    font-family: sans-serif;
+    font-size: 15px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+}
+
+#btn1:hover {
+    background-color: white;
+    color: royalblue;
+    border: 1px solid royalblue;
+    transition: .5s;
+}
+
+#p1 {
+    width: 500px;
+}
+
+#about {
+    font-family: monospace;
+    color: royalblue;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover {
+    background-color: royalblue;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    transition: .5s;
+}
