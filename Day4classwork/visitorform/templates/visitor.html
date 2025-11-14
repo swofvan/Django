@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visitor Form</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+        
+        .container {
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-family: monospace;
+            color: white;
+        }
+
+        form {
+            background-color: royalblue;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            border: none;
+            border-radius: 2px;
+            height: 20px;
+            width: 200px;
+            outline: none;
+        }
+
+        button {
+            background-color: white;
+            border: none;
+            color: royalblue;
+            width: 60px;
+            height: 20px;
+            font-weight: bolder;
+            border-radius: 5px;
+            padding: auto;
+        }
+
+        button:hover {
+            background-color: royalblue;
+            border: 1px solid white;
+            color: white;
+            transition: .5s;
+        }
+
+        #tnk {
+            font-family: monospace;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+    
+
+    <form method="GET">
+        <h1>Login</h1>
+
+        <input type="text" name="username" placeholder="Username" id="user">
+        <br><br>
+        <button type="submit" id="btn1" onclick="thank()">Submit</button>
+        <br><br>
+        <p id="tnk"></p>
+
+    </form>
+
+    </div>
+
+    <script>
+
+        function thank() {
+
+        msg = document.getElementById('user').value.trim();
+
+        document.getElementById('tnk').innerHTML = "Thank You <b>" + msg + "<b>";
+
+        }
+        
+
+    </script>
+    
+</body>
+</html>
+<!-- 
+Create a simple page where a visitor can enter their username using a form.
+When they submit it, show a thank you message with their username on a new page.
+
+Use the GET method for the form.
+
+Show this message on the result page:
+Welcome [username],
+
+Also, print the full form data received on the result page. -->
