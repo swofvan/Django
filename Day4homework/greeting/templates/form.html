@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>form</h1>
+
+        <form method="POST" action="">
+
+            {% csrf_token %}
+
+            <label>Name:</label>
+            <br>
+            <input type="text" name="name" id="name" required>
+            <br><br>
+
+            <label>Favorite Color:</label>
+            <br>
+            <input type="text" name="color" id="color" required>
+            <br><br>
+            <button type="submit" id="btn1">Submit</button>
+        </form>
+
+    </div>
+    
+</body>
+</html>
+
+
+<!-- 
+Create a page where the visitor can enter their name and favorite color.
+When the form is submitted, show this message:
+Hello [name], your favorite color is [color]!
+Also, show the full submitted form data on the result page.
+
+Use the POST method.
+
+The name and color should be required fields. -->
