@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+
+       .errorlist {
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+            list-style: none;
+            padding: 0%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div>
+
+    <h1>Login</h1>
+
+    <form method="POST" novalidate>
+
+        {% csrf_token %}
+
+        <label>Email</label>
+        <br>
+        {{ form.email }}
+        <br>
+        <p>{{ form.email.errors }}</p>
+        
+        <!-- <input type="email" name="email"> -->
+        <br><br>
+
+        <label>Password</label>
+        <br>
+        {{ form.password }}
+        <br>
+        <p>{{ form.password.errors }}</p>
+        <!-- <input type="password" name="password"> -->
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+        
+    </form>
+
+    
+
+    </div>
+    
+</body>
+</html>
+
+<!-- 
+Create a login page that asks users to enter their email and password.
+The email should be a valid format and should not be from Gmail.
+The password must be at least 6 characters long. When the user submits valid details,
+display a thank-you message along with their email. If the input is not valid,
+show the error message next to each field. -->
