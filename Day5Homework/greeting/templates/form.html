@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        
+        .container {
+            background-color: cadetblue;
+            padding: 10px 20px 20px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        button {
+            width: 70px;
+            height: 30px;
+            background-color: white;
+            color: cadetblue;
+            border: none;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: cadetblue;
+            border: 1px solid white;
+            font-weight: bold;
+            color: white;
+            transition: .7s;
+        }
+        
+        .errorlist {
+            color: red;
+            list-style: none;
+            padding: 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        
+    
+    <h1>Registration Form</h1>
+    <br>
+
+    <form method="POST" action="" novalidate>
+
+        {% csrf_token %}
+
+        <label>Full Name</label>
+        <br>
+        {{ form.Fullname }}
+        <br>
+        {{ form.Fullname.errors }}
+        <br><br>
+
+        <label>Email</label>
+        <br>
+        {{ form.Email }}
+        <br>
+        {{ form.Email.errors }}
+        <br><br>
+
+        <label>Password</label>
+        <br>
+        {{ form.Password }}
+        <br>
+        {{ form.Password.errors }}
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    </div>
+    
+</body>
+</html>
+
+<!-- 
+Create a simple registration page that asks for full name, email, and password with these rules:
+
+Full Name must be at least 5 characters and no more than 50 characters.
+
+Email must be a valid email format.
+
+Password must be at least 8 characters and no more than 20 characters.
+
+When the form is submitted successfully, show a message:
+“Thanks for registering, ”
+
+Show validation errors directly below each input field if there are any.
+
+Do not use any custom validation functions. -->
