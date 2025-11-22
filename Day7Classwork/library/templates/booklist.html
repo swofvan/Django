@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booklist</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        td, th {
+            width: 200px;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        th {
+            background-color: brown;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: lightyellow;
+        }
+
+        h1 {
+            text-align: center;
+            color: brown;
+        }
+
+        a {
+            text-align: center;
+            text-decoration: none;
+            background-color: brown;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        a:hover {
+            background: none;
+            color: brown;
+            border: 1px solid brown;
+            transition: .7s;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+    <h1>Book List</h1>
+
+    <table>
+        
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+
+        {% for book in booklist %}
+
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+        </tr>
+
+        {% endfor %}
+        
+    </table>
+    
+        <a type="button" href="{% url 'form' %}">Add Books</a>
+
+    </div>
+    
+</body>
+</html>

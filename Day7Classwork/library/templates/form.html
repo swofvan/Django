@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: brown;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background: none;
+            color: brown;
+            border: 1px solid brown;
+            transition: .7s;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: brown;
+        }
+
+        button {
+            color: white;
+            background-color: brown;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            display: block;
+            margin: auto;
+        }
+
+        button:hover {
+            background: none;
+            color: brown;
+            border: 1px solid brown;
+            transition: .7s;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form p {
+            text-align: center;
+            line-height: 30px;
+        }
+
+        form {
+            background-color: lightyellow;
+            margin-top: 50px;
+            padding: 10px 50px 20px 50px;
+            border-radius: 10px;   
+        }
+
+        form:hover {
+            box-shadow: 2px 2px 5px .5px gray;
+            transition: .7s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+    <nav>
+        <a href="{% url 'books' %}">Books</a>
+    </nav>
+
+    <form method="POST">
+
+        <h1>Add Books</h1>
+
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit" value="submit">Submit</button>
+        
+    </form>
+
+    </div>
+    
+</body>
+</html>
+
+<!-- Create a form using ModelForm where a librarian can enter a book’s title and author name,
+ save the book information to the database, and view all the saved books on another page.
+ -->
