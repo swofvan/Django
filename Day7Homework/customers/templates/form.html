@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 30px;
+        }
+
+        li {
+            padding: 10px 0px;
+            list-style: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: 50px auto;
+            background-color: #e5f5ff;
+            padding: 20px 50px 70px 50px;
+            border-radius: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            background-color: royalblue;
+            color: white;
+            padding: 6px 15px;
+            border: none;
+            border-radius: 5px;
+            float: right;
+        }
+
+        button:hover {
+            background: none;
+            border: 1px solid royalblue;
+            color: royalblue;
+            transition: .7s;
+        }
+
+        form input, form select, form textarea {
+            width: 240px;
+        }
+
+        form label {
+            padding: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: royalblue;
+            padding: 0px 10px;
+        }
+
+        a:hover {
+            color: white;
+            background-color: royalblue;
+            padding: 10px 10px;
+            border-radius: 5px;
+            transition: .7s;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <nav>
+            <a href="{% url 'form' %}">Add Customers</a>
+            <a href="{% url 'fulllist' %}">All Customers</a>
+            <a href="{% url 'filter' %}">Filtered Customers</a>
+        </nav>
+
+    <form method="POST">
+
+        <h1>Add Customers</h1>
+
+        {% csrf_token %}
+
+        {{ form.as_ul }}
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    </div>
+    
+</body>
+</html>
+
+<!-- First, create a form page where staff can add customer details (name and email).
+Use a Django ModelForm to collect and save this data into the database.
+
+Then, create two display pages:
+
+All Customers Page:
+
+   Show a list of all customers.
+
+   Display their name and email.
+  
+   The list should be sorted in ascending order by customer name.
+
+Filtered Customers Page:
+
+   Show only the customers whose email ends with @example.com.
+ -->
