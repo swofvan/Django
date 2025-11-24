@@ -1,0 +1,107 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block 'content' %}
+
+<style>
+
+    #stack {
+            color: #ff0000;
+        }
+
+    .body {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .txt h1 {
+        text-align: center;
+    }
+
+    .txt h2 {
+        text-align: center;
+        font-weight: normal;
+        margin-top: 50px;
+    }
+
+    .txt p{
+        text-align: center;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        gap: 100px;
+        margin-top: 50px;
+    }
+
+    .skill {
+        background-color: #50a1ff;
+        width: 300px;
+        height: 200px;
+    }
+
+    .career {
+        background-color: #ffbe00;
+        width: 300px;
+        height: 200px;
+    }
+
+    .job {
+        background-color: #ff4954;
+        width: 300px;
+        height: 200px;
+    }
+    .cards h3 {
+        font-size: 20px;
+        font-weight: normal;
+        margin-top: 90px;
+        color: white;
+    }
+
+</style>
+
+<div class="body">
+
+    <div class="txt">
+        <h1>Welcome to<span id="stack"> MashupStack</span></h1>
+        <h2>GET TRAINED. GET HIRED.</h2>
+        <p>Get real employable skills & Land your dream job at top companies</p>
+
+        <div class="cards">
+            <div class="skill"><h3>LEARN NEW SKILLS</h3></div>
+            <div class="career"><h3>ADVANCE YOUR CAREER</h3></div>
+            <div class="job"><h3>BE JOB READY</h3></div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+<!-- 
+Make a simple website with three pages:
+
+Home
+
+About
+
+Contact
+
+Each page should show:
+
+A common top section with the website name and links to all three pages
+A common bottom section that shows the Notice Board.that includes 3 important messages:
+  
+       .“Website will be under maintenance this Saturday”
+
+       .“New blog section coming soon!”
+
+        .“Contact us for more information”
+
+Each page’s own content in the main body
+
+Do not copy the same header, or notice board code in all pages. -->

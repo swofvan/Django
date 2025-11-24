@@ -1,0 +1,41 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block 'content' %}
+
+<style>
+
+    #stack {
+            color: #ff0000;
+        }
+
+    .body {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .txt h1 {
+        text-align: center;
+    }
+
+    .body p {
+        text-align: left;
+        width: 800px;
+        line-height: 25px;
+        
+    }
+
+</style>
+
+<div class="body">
+
+    <div class="txt">
+        <h1>Mashup<span id="stack">Stack</span></h1>
+        <p>MashupStack is a dedicated software training company committed to shaping the next generation of skilled developers. With our offline training centers in Kochi and Trivandrum, we offer immersive, hands-on learning experiences that prepare students for real-world tech careers.</p>
+        <p>At MashupStack, we don’t just teach code — we build problem solvers, critical thinkers, and industry-ready professionals. Our programs cover a wide range of in-demand technologies, including Python, Java, MERN, .NET, React, Angular and more. We believe in a practical, mentor-driven approach that ensures every learner gains both confidence and competence.</p>
+        <p>Our team consists of passionate trainers, developers, and tech enthusiasts who are driven by one mission — to make quality tech education accessible, engaging, and impactful. Whether you're a recent graduate looking to land your first job, or someone who wants to upskill and switch careers, MashupStack is where your transformation begins.</p>
+    </div>
+
+</div>
+
+{% endblock %}

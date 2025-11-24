@@ -1,0 +1,22 @@
+ {% load static %}
+<div class="container">
+
+        <div class="head">
+
+            <div class="logo">
+                <img src="{% static 'MashupStacklogo.png'%}" alt="logo" width="200px">
+            </div>
+
+            <div class="nav">
+
+                <nav id="nav">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'about' %}">About Us</a>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                </nav>
+
+            </div>
+
+        </div>
+
+    </div>

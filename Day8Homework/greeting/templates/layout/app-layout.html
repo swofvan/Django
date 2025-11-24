@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+
+    <style>
+
+        body {
+            margin: 0%;
+            padding: 0%;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+/* 
+        .container {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        } */
+
+        .head {
+            background-color: black;
+            height: 70px;
+            width: 100%;
+            /* display: flex; */
+            align-items: center;
+            /* justify-content: center; */
+            padding-left: 20px;
+        }
+
+        .logo {
+            float: left;
+            margin-left: 2%;
+            margin-top: 10px;
+        }
+
+        .nav {
+            float: right;
+            margin-right: 5%;
+            margin-top: 25px;
+        }
+
+        #nav {
+            background-color: rgb(41, 41, 41);
+            display: inline;
+            padding: 10px 35px 10px 50px;
+            border-radius: 20px;
+        }
+
+        #nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        #nav a:hover {
+            color: black;
+            background-color: white;
+            transition: .7s ;
+        }
+
+        .foot {
+            background-color: black;
+            height: 250px;
+            margin-top: 100px;
+        }
+
+        .nav2 {
+            float: right;
+            margin-right: 250px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-top: 50px;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        li a:hover {
+            color: rgb(255, 72, 72);
+            transition: .7s;
+        }
+
+        .logo2 {
+            float: left;
+            margin-left: 50px;
+            margin-top: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    {% include 'partiels/navbar.html' %}
+
+    {% block 'content' %}
+    {% endblock %}
+    
+    {% include 'partiels/footer.html' %}
+    
+
+    
+    
+</body>
+</html>
+
+<!-- 
+Make a simple website with three pages:
+
+Home
+
+About
+
+Contact
+
+Each page should show:
+
+A common top section with the website name and links to all three pages
+A common bottom section that shows the Notice Board.that includes 3 important messages:
+  
+       .“Website will be under maintenance this Saturday”
+
+       .“New blog section coming soon!”
+
+        .“Contact us for more information”
+
+Each page’s own content in the main body
+
+Do not copy the same header, or notice board code in all pages. -->
