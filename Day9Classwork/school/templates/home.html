@@ -1,0 +1,71 @@
+{% extends 'layout/applayout.html'%}
+{% block 'content' %}
+
+<style>
+
+    .container_h {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+    }
+
+    tr, table {
+        border: 1px solid;
+        border-collapse: collapse;
+        height: 50px;
+        font-weight: bold;
+    }
+
+    td {
+        width: 100px;
+        font-size: 18px;
+        text-align: left;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+
+    td a {
+        font-size: 12px;
+        text-decoration: none;
+        background-color: royalblue;
+        color: white;
+        padding: 6px 8px;
+        border-radius: 15px;
+        font-weight: lighter;
+    }
+
+    td a:hover {
+        background-color: rgb(92, 131, 247);
+        transition: .7s;
+    }
+
+</style>
+
+<div class="container_h">
+
+    <table>
+
+        {% for stu in students %}
+        
+        <tr>
+            <td>{{ stu.name }}</td>
+            <td><a href="{% url 'result' stu.name %}">View Result</a></td>
+            <!-- <td><a href="/result/ {{ stu.name }}/">View Result</a></td> -->
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
+
+</div>
+
+<!-- 
+You are building a small school website . On the homepage, show a list of students.
+When you click on "View Result" next to a student’s name, you should go to a new
+page that shows that student’s result. The student's name should be passed through
+the address bar (URL), and the result should be shown on the next page.
+-->

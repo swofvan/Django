@@ -1,0 +1,68 @@
+{% extends 'layout/applayout.html'%}
+{% block 'content' %}
+
+<style>
+
+    .container_r {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        margin-top: 20px;
+    }
+
+    th {
+        background-color: antiquewhite;
+        font-size: 50px;
+        letter-spacing: 1.7px;
+        padding: 20px 100px;
+        text-align: center;
+        color: brown;
+    }
+
+    td {
+        font-size: 30px;
+        text-align: left;
+        text-align: center;
+        padding: 20px 0px;
+        font-weight: bold;
+        width: 50%;
+    }
+
+    #res {
+        background-color: rgb(255, 255, 217);
+    }
+
+    #per {
+        background-color: rgb(190, 239, 255);
+        
+    }
+
+    .passed {
+    color: green;
+    }
+
+    .failed {
+        color: red;
+        font-weight: bold;
+    }
+
+</style>
+
+<div class="container_r">
+    <table>
+        <tr>
+            <th colspan="2">{{ student.name }}</th>
+        </tr>
+
+        <tr>
+            <td id="res" class="{% if student.result == 'Passed' %}passed{% else %}failed{% endif %}">{{ student.result }}</td>
+            <td id="per">{{ student.percentage }}%</td>
+        </tr>
+
+    </table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<style>
+
+    .container {
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+    }
+
+    nav {
+        padding-left: 30px;
+        padding-bottom: 30px;
+    }
+
+    nav a {
+        margin-right: 30px;
+        text-decoration: none;
+        font-weight: normal;
+        color: white;
+        background-color: royalblue;
+        padding: 7px;
+        border-radius: 5px;
+    }
+
+    nav a:hover {
+        color: royalblue;
+        background-color: white;
+        transition:  .7s;
+    }
+
+</style>
+
+<div class="container">
+
+        <h1>ABC Public School</h1>
+
+        <nav>
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'form' %}">Add Students</a>
+            
+        </nav>
+
+    </div>
