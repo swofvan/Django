@@ -1,0 +1,38 @@
+<!-- Create a small website for a college system. There are two apps:
+
+One app is called students, which shows a list of students.
+
+Another app is called teachers, which shows a list of teachers.
+
+Requirements:
+
+From the home page, there should be links to the Students and Teachers pages.
+
+Each list should be on its own page using the correct app route.
+
+Use namespacing in templates to connect the links.
+
+After submitting a form (optional), redirect the user to the listing page (student list or teacher list).
+
+Pass a welcome message to the student and teacher pages using route data. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>College Management System</h2>
+
+        <ul>
+            <li><a href="{% url 'students' %}">Students</a></li>
+            <li><a href="{% url 'teacherslist' %}">Teachers</a></li>
+        </ul>
+
+    
+</body>
+</html>

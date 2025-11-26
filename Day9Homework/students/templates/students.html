@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+
+    <a href="{% url 'addstudent' %}">Add Students</a>
+
+    <table>
+        <tr>
+            <th>Student Neme</th>
+            <th>Course</th>
+        </tr>
+
+        {% for stu in students %}
+        <tr>
+            <td>{{ stu.name }}</td>
+            <td>{{ stu.course }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="{% url 'home' %}">Home</a>
+
+</body>
+</html>
