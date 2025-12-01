@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'signup' %}">Signup</a> &nbsp;&nbsp;
+        <a href="{% url 'login' %}">Login</a> &nbsp;&nbsp;
+        <a href="{% url 'visitcounter' %}">Visit count</a> &nbsp;&nbsp;
+        <a href="{% url 'logout' %}">Logout</a> &nbsp;&nbsp;
+    </nav>
+
+    <h2>Signup</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Signup</button>
+
+    </form>
+    
+</body>
+</html>
