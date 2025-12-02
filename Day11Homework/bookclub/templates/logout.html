@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'signup' %}">Signup</a> &nbsp;&nbsp;
+        <a href="{% url 'login' %}">Login</a> &nbsp;&nbsp;
+        <a href="{% url 'welcome' %}">Welcome</a> &nbsp;&nbsp;
+        <a href="{% url 'logout' %}">Logout</a> &nbsp;&nbsp;
+    </nav>
+
+    {% if user.is_authenticated %}
+
+    <p>{{ user.username }}</p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <button type="submit">Logout</button>
+
+    </form>
+
+    {% else %}
+
+    <p>You are not currently logged in.</p>
+
+    {% endif %}
+    
+</body>
+</html>
