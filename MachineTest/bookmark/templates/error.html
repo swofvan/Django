@@ -1,0 +1,12 @@
+{% extends 'layout/app-layout.html'%}
+{% block 'content' %}
+
+<div>
+
+    <h3>{{ message }}</h3>
+
+    <a href="{% url 'add_bookmarks' %}">Go Back</a>
+
+</div>
+
+{% endblock %}

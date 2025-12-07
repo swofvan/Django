@@ -1,0 +1,70 @@
+{% extends 'layout/app-layout.html'%}
+{% block 'content' %}
+
+<div>
+<!-- 
+    <h2>Bookmark links</h2>
+
+    <table>
+
+        <tr>
+            <th>Title</th>
+            <th>Urls</th>
+        </tr>
+
+        {% for link in bookmarks %}
+
+        <tr>
+            <td>{{ link.title }}</td>
+            <td>{{ link.url }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table> -->
+
+    <form method="GET">
+
+    <input type="text" name="q" placeholder="Search by title or URL" value="{{ search }}">
+
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+    
+    <ul>
+        {% for link in page_obj %}
+            <li><strong>{{ link.title }}</strong></li>
+            <li><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></li>
+            <li><a href="{% url 'edit' link.id %}"><button type="submit" value="edit">Edit</button></a></li>
+            <li><a href="{% url 'delete' link.id %}"><button type="submit" value="edit">Delete</button></a></li>
+        {% endfor %}
+    </ul>
+
+    <nav>
+
+        {% if page_obj.has_previous %} 
+                <a href="?page=1" class="page-link">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link" aria-label="previous">&laquo; previous</a>
+        {% endif %}
+
+        {% for page_number in page_obj.paginator.get_elided_page_range %}
+            
+        {% if page_obj.number == page_number %}
+                    <span class="page-link">{{ page_number }}</span>
+            {% else %}
+                    <a href="?page={{ page_number }}" class="page-link">{{ page_number }}</a>
+        {% endif %}
+
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">next &raquo;</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">last &raquo;</a>
+        {% endif %}
+
+    </nav>
+
+</div>
+
+{% endblock %}
