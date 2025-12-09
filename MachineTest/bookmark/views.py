@@ -91,7 +91,7 @@ def list_bookmarks(request):
             Q(url__icontains=search)
         )
     
-    paginator = Paginator(bookmarks, 5)
+    paginator = Paginator(bookmarks, 2)
     page_num = request.GET.get('page')
     page_obj = paginator.get_page(page_num)
 

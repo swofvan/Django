@@ -23,6 +23,8 @@
 
     </table> -->
 
+    <br><br>
+
     <form method="GET">
 
     <input type="text" name="q" placeholder="Search by title or URL" value="{{ search }}">
@@ -30,14 +32,13 @@
     <button type="submit">Search</button>
 </form>
 
-<hr>
-    
+<br>    
     <ul>
         {% for link in page_obj %}
             <li><strong>{{ link.title }}</strong></li>
             <li><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></li>
-            <li><a href="{% url 'edit' link.id %}"><button type="submit" value="edit">Edit</button></a></li>
-            <li><a href="{% url 'delete' link.id %}"><button type="submit" value="edit">Delete</button></a></li>
+            <a href="{% url 'edit' link.id %}"><button type="submit" value="edit">Edit</button></a>
+            <a href="{% url 'delete' link.id %}"><button type="submit" value="edit">Delete</button></a>
         {% endfor %}
     </ul>
 
